@@ -11,7 +11,7 @@ root = Tk()
 root.geometry("900x600")
 root.title("Food Ordering App")
 
-def value_selected():
+def mainvalue_selected():
     global mainquantity, mainfood
     mainquantity = mainfoodamount.get()
 
@@ -43,9 +43,9 @@ passentry.place(x=90, y=50)
 
 mainfood = Label(root, text= "What food would you like: Chiken Sandwich, Veg Sandwich, or None?", font = ("Arial", 20))
 mainfood.place(x=20, y = 90)
-mainfoodchoice = Spinbox(root, values = ("Chicken Sandwich", "Veg Sandwich", "None"))
+mainfoodchoice = Spinbox(root, values = ("Chicken Sandwich", "Veg Sandwich", "None"), command = main_selected)
 mainfoodchoice.place(x=300, y=130)
-mainfoodamount = Spinbox(root, from_ = 1, to = 10, state = "readonly")
+mainfoodamount = Spinbox(root, from_ = 1, to = 10, state = "readonly", command = mainvalue_selected)
 mainfoodamount.place(x=10, y=130)
 
 beverage = Label(root, text= "What beverage would you like: Cola, Fanta, Sprite, Orange Juice, Water, or None?", font = ("Arial", 20))
@@ -57,10 +57,10 @@ maindrinkamount.place(x=10, y=260)
 
 desert = Label(root, text= "What desert would you like: Ice Cream, Ice Lolly, Chocolate Cake, Red Velvet Cake, or None?", font = ("Arial", 20))
 desert.place(x=20, y = 350)
-maindrinkchoice = Spinbox(root, values = ("Ice Cream", "Ice Lolly", "Chocolate Cake", "Red Velvet Cake",  "None"))
-maindrinkchoice.place(x=300, y=390)
-maindrinkamount = Spinbox(root, from_ = 1, to = 10, state = "readonly")
-maindrinkamount.place(x=10, y=390)
+maindesertchoice = Spinbox(root, values = ("Ice Cream", "Ice Lolly", "Chocolate Cake", "Red Velvet Cake",  "None"))
+maindesertchoice.place(x=300, y=390)
+maindesertamount = Spinbox(root, from_ = 1, to = 10, state = "readonly")
+maindesertamount.place(x=10, y=390)
 
 submit= Button(root, text="Sumbit", font=("Arial", 15), command = foodcalculation)
 submit.place(x=400, y = 500)
